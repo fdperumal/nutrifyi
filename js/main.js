@@ -155,7 +155,7 @@
           submitBtn.textContent = 'Get in touch';
         }
         statusEl.className = 'form-status error';
-        statusEl.innerHTML = 'Something went wrong sending your message. Please email <a href="mailto:webs4biz.lab@gmail.com" style="color:inherit;font-weight:700;">webs4biz.lab@gmail.com</a> directly.';
+        statusEl.innerHTML = 'Something went wrong sending your message. Please email <a href="mailto:hello@nutrifyi.co.za" style="color:inherit;font-weight:700;">hello@nutrifyi.co.za</a> directly.';
       }
     });
   }

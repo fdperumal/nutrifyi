@@ -48,7 +48,5 @@ git push -u origin main
    - **Form:** `contact`
    - **Email to notify:** `webs4biz.lab@gmail.com` *(confirm the verification email if prompted)*
 
-## Updating the Contact Email Later
-When ready to switch from `webs4biz.lab@gmail.com` to `hello@nutrifyi.co.za`:
-1. Update the two `mailto:` links in `index.html` and the fallback link in `js/main.js`.
-2. Update the email recipient in **Netlify Dashboard → Forms → Submission notifications**.
+## Updating the Notification Email Later
+The public site displays `hello@nutrifyi.co.za`. Only the Netlify Forms backend notification is routed to `webs4biz.lab@gmail.com` for testing — update the email recipient in **Netlify Dashboard → Forms → Submission notifications** when ready for final launch.
