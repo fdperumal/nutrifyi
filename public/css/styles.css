@@ -592,6 +592,26 @@ footer {
 .footer-flex a { color: var(--muted); text-decoration: none; }
 .footer-flex a:hover { color: var(--ink); }
 
+.hidden { display: none; }
+.badge-slate { background: var(--slate); }
+.badge-leaf { background: var(--leaf); }
+.badge-sage { background: var(--sage); }
+.bento-mini .bento-quote-title { font-size: 20px; font-weight: 500; }
+.finder-opt .pill-tag-xs,
+.pill-tag.pill-tag-xs { margin: 0; padding: 3px 9px; font-size: 11px; }
+.pill-tag.pill-tag-compact { margin-bottom: 12px; }
+.pill-tag.pill-tag-inline { margin-left: 6px; }
+.finder-result-desc { color: var(--muted); font-size: 14.5px; }
+.journey-banner-desc { color: var(--muted); font-size: 15px; max-width: 640px; }
+.employers-copy { color: var(--muted); font-size: 15.5px; margin-bottom: 14px; }
+.employers-copy.employers-copy-last { margin-bottom: 24px; }
+.section.section-contact { padding-top: 20px; }
+.contact-intro { margin-bottom: 28px; }
+.btn.btn-channel { justify-content: space-between; }
+.contact-footnote { font-size: 13.5px; opacity: 0.78; }
+.btn.btn-block { width: 100%; }
+.form-status-link { color: inherit; font-weight: 700; }
+
 @media (max-width: 960px) {
   .nav-links, .nav-right { display: none; }
   .mobile-btn { display: inline-flex; }
