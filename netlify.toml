@@ -17,3 +17,19 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Placeholder guard: production deploys fail while any {{placeholder}} is left in public/.
+# Deploy previews and branch deploys still build. To go live, fill the placeholders; do not delete this check.
+[context.production]
+  command = "if grep -rIl '{{' public/; then echo 'Unfilled {{placeholders}} found in the files above. Fill them before deploying to production.'; exit 1; fi"
+
+# Common legal URLs that used to return 404
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy-policy/"
+  status = 301
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms-of-use/"
+  status = 301

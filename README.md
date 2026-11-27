@@ -52,3 +52,6 @@ git push -u origin main
 
 ## Updating the Notification Email Later
 The public site displays `hello@nutrifyi.co.za`. Only the Netlify Forms backend notification is routed to `webs4biz.lab@gmail.com` for testing — update the email recipient in **Netlify Dashboard → Forms → Submission notifications** when ready for final launch.
+
+## Production Placeholder Guard
+`netlify.toml` defines a `[context.production]` build command that fails production deploys if any `{{...}}` placeholder remains under `public/`. Deploy previews and branch deploys still build normally so draft legal pages can be reviewed before launch. Fill every remaining placeholder (and remove `<meta name="robots" content="noindex" />` from the legal pages) before deploying to production.
