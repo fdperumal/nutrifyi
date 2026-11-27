@@ -14,9 +14,6 @@
   <meta property="og:image" content="assets/hero-editorial.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -79,7 +76,7 @@
             <img src="assets/hero-editorial.jpg" alt="Balanced whole-food breakfast bowl and herbal tea in natural morning light" />
           </div>
           <div class="bento-mini">
-            <strong class="serif" style="font-size: 20px; font-weight: 500;">Progress, <em>not perfection.</em></strong>
+            <strong class="serif bento-quote-title">Progress, <em>not perfection.</em></strong>
             <p>Build on what works. That’s NutriFYI.</p>
           </div>
           <div class="bento-mini dark">
@@ -133,7 +130,7 @@
               <img src="assets/food-balanced-lunch.jpg" alt="Balanced whole-food lunch plate with salmon, quinoa, roasted sweet potato, and greens" loading="lazy" />
             </div>
             <div class="method-body">
-              <div class="step-badge" style="background: #66717f;">1</div>
+              <div class="step-badge badge-slate">1</div>
               <h3>Recognise what’s working</h3>
               <p>The habits and strengths you already have, and can build on.</p>
             </div>
@@ -143,7 +140,7 @@
               <img src="assets/food-smart-snacks.jpg" alt="Healthy afternoon snacks with Greek yogurt, berries, apple, almond butter, and mint water" loading="lazy" />
             </div>
             <div class="method-body">
-              <div class="step-badge" style="background: #6fa21d;">2</div>
+              <div class="step-badge badge-leaf">2</div>
               <h3>Understand what gets in the way</h3>
               <p>The patterns, pressures and everyday moments that knock you off track.</p>
             </div>
@@ -153,7 +150,7 @@
               <img src="assets/food-meal-prep.jpg" alt="Fresh weekly whole-food meal prep containers with leafy greens, roasted vegetables, grains, and chickpeas" loading="lazy" />
             </div>
             <div class="method-body">
-              <div class="step-badge" style="background: #97a188;">3</div>
+              <div class="step-badge badge-sage">3</div>
               <h3>Build from there</h3>
               <p>Practical, manageable habits that fit the life you’re living now.</p>
             </div>
@@ -190,7 +187,7 @@
             <button type="button" class="finder-opt" data-key="membership">
               <div class="finder-opt-top">
                 <small>Self-guided</small>
-                <span class="pill-tag pill-honey" style="margin:0; padding:3px 9px; font-size:11px;">Coming soon</span>
+                <span class="pill-tag pill-honey pill-tag-xs">Coming soon</span>
               </div>
               <strong>NutriFYI Membership</strong>
               <span>Learn at your own pace. Build a lifestyle that works for you.</span>
@@ -200,16 +197,16 @@
           <div class="finder-result" id="fitResult">
             <img class="finder-photo" src="assets/food-balanced-lunch.jpg" alt="Balanced whole-food lunch plate" loading="lazy" />
             <div class="finder-result-body">
-              <span class="pill-tag" style="margin-bottom: 12px;">Personal support</span>
+              <span class="pill-tag pill-tag-compact">Personal support</span>
               <h3>1-on-1 Coaching Programme</h3>
               <div class="sub">Personal support, tailored to you.</div>
-              <p style="color: var(--muted); font-size: 14.5px;">Work towards your health goals with individual guidance shaped around your needs, routines and real life. Build understanding, confidence and habits you can maintain.</p>
+              <p class="finder-result-desc">Work towards your health goals with individual guidance shaped around your needs, routines and real life. Build understanding, confidence and habits you can maintain.</p>
               <ul>
                 <li>Personal goals and guidance</li>
                 <li>Support and accountability</li>
                 <li>Practical, sustainable habits</li>
               </ul>
-              <a href="#contact" class="btn btn-primary" onclick="preselectProgramme('1-on-1 Coaching Programme')">Ask about 1-on-1 coaching →</a>
+              <a href="#contact" class="btn btn-primary" data-programme="1-on-1 Coaching Programme">Ask about 1-on-1 coaching →</a>
             </div>
           </div>
         </div>
@@ -218,13 +215,13 @@
         <div class="journey-banner">
           <div class="pill-tag pill-honey">Part of NutriFYI Membership</div>
           <h3>A learning journey that turns knowledge into action</h3>
-          <p style="color: var(--muted); font-size: 15px; max-width: 640px;">NutriFYI membership includes a structured online learning journey that takes you from understanding the basics to applying them in everyday life, so the habits you build are ones that last.</p>
+          <p class="journey-banner-desc">NutriFYI membership includes a structured online learning journey that takes you from understanding the basics to applying them in everyday life, so the habits you build are ones that last.</p>
 
           <div class="journey-overlay-grid">
             <div class="journey-overlay-card">
               <img src="assets/hero-editorial.jpg" alt="Whole-food breakfast bowl" loading="lazy" />
               <div class="journey-overlay-content">
-                <div class="step-badge" style="background: #66717f;">1</div>
+                <div class="step-badge badge-slate">1</div>
                 <div>
                   <strong>Learn</strong>
                   <span>Understand the basics</span>
@@ -234,7 +231,7 @@
             <div class="journey-overlay-card">
               <img src="assets/food-smart-snacks.jpg" alt="Healthy afternoon snacks" loading="lazy" />
               <div class="journey-overlay-content">
-                <div class="step-badge" style="background: #6fa21d;">2</div>
+                <div class="step-badge badge-leaf">2</div>
                 <div>
                   <strong>Apply</strong>
                   <span>Put ideas into practice</span>
@@ -244,7 +241,7 @@
             <div class="journey-overlay-card">
               <img src="assets/food-meal-prep.jpg" alt="Weekly whole-food meal prep" loading="lazy" />
               <div class="journey-overlay-content">
-                <div class="step-badge" style="background: #97a188;">3</div>
+                <div class="step-badge badge-sage">3</div>
                 <div>
                   <strong>Build habits</strong>
                   <span>Make change sustainable</span>
@@ -263,9 +260,9 @@
           <div>
             <div class="pill-tag">For employers</div>
             <h2>Healthier people. Stronger workplaces.</h2>
-            <p style="color: var(--muted); font-size: 15.5px; margin-bottom: 14px;">Demanding workloads, stress and busy lives can leave people running on empty, and it often shows in their energy, focus and wellbeing at work.</p>
-            <p style="color: var(--muted); font-size: 15.5px; margin-bottom: 24px;">NutriFYI helps you create a healthier workplace by giving employees practical, science-informed nutrition and wellbeing support that fits around working life, without turning health into another task on their to-do list.</p>
-            <a href="#contact" class="btn btn-primary" onclick="preselectProgramme('Employee Wellness Programme')">Talk to us about your team</a>
+            <p class="employers-copy">Demanding workloads, stress and busy lives can leave people running on empty, and it often shows in their energy, focus and wellbeing at work.</p>
+            <p class="employers-copy employers-copy-last">NutriFYI helps you create a healthier workplace by giving employees practical, science-informed nutrition and wellbeing support that fits around working life, without turning health into another task on their to-do list.</p>
+            <a href="#contact" class="btn btn-primary" data-programme="Employee Wellness Programme">Talk to us about your team</a>
           </div>
           <div class="photo-card">
             <img src="assets/workplace-wellness.jpg" alt="Workplace team participating in a NutriFYI wellbeing session" loading="lazy" />
@@ -295,29 +292,29 @@
     </section>
 
     <!-- Contact -->
-    <section class="section" id="contact" style="padding-top: 20px;">
+    <section class="section section-contact" id="contact">
       <div class="container">
         <div class="contact-box">
           <div>
             <h2>Let’s talk about your wellbeing</h2>
-            <p style="margin-bottom: 28px;">Whether you’re looking for support for yourself, already part of the programme, or exploring NutriFYI for your workplace, we’d love to hear from you. We’ll reply within one working day.</p>
+            <p class="contact-intro">Whether you’re looking for support for yourself, already part of the programme, or exploring NutriFYI for your workplace, we’d love to hear from you. We’ll reply within one working day.</p>
             <div class="contact-channels">
-              <a href="mailto:hello@nutrifyi.co.za" class="btn btn-leaf" style="justify-content: space-between;">
+              <a href="mailto:hello@nutrifyi.co.za" class="btn btn-leaf btn-channel">
                 <span>hello@nutrifyi.co.za</span><span>→</span>
               </a>
               <a href="https://wa.me/27615337941" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
                 <span>WhatsApp +27 61 533 7941</span><span>→</span>
               </a>
             </div>
-            <p style="font-size: 13.5px; opacity: 0.78;">Member login is coming soon.</p>
+            <p class="contact-footnote">Member login is coming soon.</p>
           </div>
 
           <div class="contact-form">
             <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
               <input type="hidden" name="form-name" value="contact" />
               <input type="hidden" name="subject" value="New NutriFYI enquiry from %{formName} (%{submissionId})" />
-              <p class="sr-only">
-                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+              <p class="sr-only" aria-hidden="true">
+                <label>Don’t fill this out if you’re human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
               </p>
 
               <div class="field">
@@ -330,17 +327,17 @@
               </div>
               <div class="field">
                 <label for="name">Name</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
+                <input id="name" name="name" type="text" autocomplete="name" maxlength="100" required />
               </div>
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
+                <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required />
               </div>
               <div class="field">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="3"></textarea>
+                <textarea id="message" name="message" rows="3" maxlength="2000"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Get in touch</button>
+              <button type="submit" class="btn btn-primary btn-block">Get in touch</button>
             </form>
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </div>
@@ -350,9 +347,9 @@
   </main>
 
   <div class="fyi-bar">
-    <div style="background: #66717f;"></div>
-    <div style="background: #6fa21d;"></div>
-    <div style="background: #97a188;"></div>
+    <div class="badge-slate"></div>
+    <div class="badge-leaf"></div>
+    <div class="badge-sage"></div>
   </div>
   <footer>
     <div class="container footer-flex">
@@ -363,8 +360,14 @@
       <div class="footer-links">
         <a href="mailto:hello@nutrifyi.co.za">hello@nutrifyi.co.za</a>
         <a href="https://wa.me/27615337941" target="_blank" rel="noopener noreferrer">WhatsApp +27 61 533 7941</a>
-        <span>© 2026 NutriFYI</span>
       </div>
+    </div>
+    <div class="container footer-legal">
+      <p>© 2026 <mark class="placeholder">{{BUSINESS_NAME}}</mark> (Reg. No. <mark class="placeholder">{{REG_NUMBER}}</mark>), trading as NutriFYI</p>
+      <nav aria-label="Legal">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-use/">Terms of Use</a>
+      </nav>
     </div>
   </footer>
 

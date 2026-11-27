@@ -6,19 +6,21 @@ Production static website for **NutriFYI** (*Nourishing people. Powering potenti
 
 ```text
 07_website/
-├── index.html          # Main landing page (with Netlify Forms markup)
-├── css/styles.css      # Responsive stylesheet
-├── js/main.js          # Navigation, programme selector & AJAX form handler
-├── assets/             # Official logo, leaf favicon & editorial photography
-├── netlify.toml        # Netlify publish config & security/cache headers
-├── robots.txt          # Search engine crawling rules
-└── .gitignore          # Excludes .netlify/, .env, and OS artifacts
+├── public/
+│   ├── index.html          # Main landing page (with Netlify Forms markup)
+│   ├── css/styles.css      # Responsive stylesheet
+│   ├── js/main.js          # Navigation, programme selector & AJAX form handler
+│   ├── assets/             # Official logo, leaf favicon & editorial photography
+│   └── robots.txt          # Search engine crawling rules
+├── netlify.toml            # Netlify publish config & security/cache headers
+├── README.md               # Project documentation (not published)
+└── .gitignore              # Excludes .netlify/, .env, and OS artifacts
 ```
 
 ## Local Preview
 
 ```bash
-python -m http.server 8080
+cd public && python -m http.server 8080
 ```
 
 Then open http://localhost:8080/ in your browser.
@@ -38,7 +40,7 @@ git push -u origin main
 
 ### 2. Connect to Netlify
 1. In the Netlify dashboard, choose **Add new project → Import an existing project → GitHub** and select `nutrifyi`.
-2. Netlify reads `netlify.toml` automatically (`publish = "."`, no build command needed).
+2. Netlify reads `netlify.toml` automatically (`publish = "public"`, no build command needed).
 3. Name the Netlify project **`nutrifyi`** (or your preferred custom domain).
 
 ### 3. Enable Netlify Forms & Email Notifications (`webs4biz.lab@gmail.com`)
@@ -50,3 +52,6 @@ git push -u origin main
 
 ## Updating the Notification Email Later
 The public site displays `hello@nutrifyi.co.za`. Only the Netlify Forms backend notification is routed to `webs4biz.lab@gmail.com` for testing — update the email recipient in **Netlify Dashboard → Forms → Submission notifications** when ready for final launch.
+
+## Production Placeholder Guard
+`netlify.toml` defines a `[context.production]` build command that fails production deploys if any `{{...}}` placeholder remains under `public/`. Deploy previews and branch deploys still build normally so draft legal pages can be reviewed before launch. Fill every remaining placeholder (and remove `<meta name="robots" content="noindex" />` from the legal pages) before deploying to production.
