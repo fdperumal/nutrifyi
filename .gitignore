@@ -1,0 +1,13 @@
+# Netlify local state (never commit)
+.netlify/
+
+# Environment variables
+.env
+.env.*
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.log
