@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Dashboard — NutriFYI</title>
+  <meta name="description" content="NutriFYI client wellbeing dashboard — track daily small steps, learning modules, and 1-on-1 coaching." />
+  <meta name="theme-color" content="#6fa21d" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="app-shell">
+    <!-- LEFT DARK FOREST SIDEBAR -->
+    <aside class="sidebar" id="sidebar" aria-label="Client dashboard navigation">
+      <div class="sidebar-top">
+        <div class="sidebar-brand-row">
+          <a href="../" class="sidebar-brand" aria-label="NutriFYI home">
+            <div class="brand-mark-row">
+              <span class="brand-wordmark">
+                nutri
+                <svg class="brand-leaf-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M16 50C14 31 25 14 50 11C49 35 37 50 16 50Z" fill="#8f9e83"/>
+                  <path d="M16.5 49.5C23 41 31 32 42 21" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="fyi-circles" aria-hidden="true">
+                <span class="circle-badge circle-f">F</span>
+                <span class="circle-badge circle-y">Y</span>
+                <span class="circle-badge circle-i">I</span>
+              </span>
+            </div>
+            <span class="brand-tagline">Nourishing people. Powering potential.</span>
+          </a>
+          <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close navigation">×</button>
+        </div>
+
+        <ul class="nav-list">
+          <li>
+            <button type="button" class="nav-btn active" data-section="Dashboard" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Dashboard
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" data-section="My Habits">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              My Habits
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" data-section="Learning Path">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Learning Path
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" data-section="Coaching">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Coaching
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" data-section="Seasonal Guides">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Seasonal Guides
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" data-section="Resource Library">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Resource Library
+            </button>
+          </li>
+          <li>
+            <button type="button" class="nav-btn" data-section="Settings">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              Settings
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Featured Bottom Sidebar Picture + Profile -->
+      <div class="sidebar-bottom">
+        <div class="sidebar-photo-card">
+          <img src="../assets/food-meal-prep.jpg" alt="" />
+          <div class="sidebar-photo-overlay"></div>
+          <div class="sidebar-photo-content">
+            <span class="sidebar-photo-tag">Progress</span>
+            <span class="sidebar-photo-quote">Small steps create big change.</span>
+            <div class="sidebar-accent-bar"></div>
+          </div>
+        </div>
+
+        <div class="sidebar-profile">
+          <div class="profile-left">
+            <img class="profile-avatar" src="../assets/coaching-portrait.jpg" alt="Sarah Miller" />
+            <div class="profile-info">
+              <strong>Sarah Miller</strong>
+              <span>1-on-1 Coaching</span>
+            </div>
+          </div>
+          <a href="../" class="signout-link">Exit</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button type="button" class="mobile-menu-btn" id="mobileSidebarBtn" aria-label="Open menu" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <label class="search-box">
+            <span class="sr-only">Search dashboard</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="dashboardSearch" placeholder="Search habits, lessons, recipes, or notes..." />
+          </label>
+        </div>
+
+        <div class="top-bar-right">
+          <button type="button" class="icon-btn" aria-label="Notifications" data-toast="Coach Claire left a note ahead of Thursday’s session.">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="badge-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Toast Feedback -->
+      <div class="toast-banner hidden" id="toastBanner" role="status" aria-live="polite">
+        <span id="toastText"></span>
+        <button type="button" class="toast-close" id="toastClose" aria-label="Dismiss message">×</button>
+      </div>
+
+      <!-- Welcome & CTA Row -->
+      <section class="welcome-row">
+        <div class="welcome-meta">
+          <span class="welcome-eyebrow">Welcome back</span>
+          <h1>Good to see you, Sarah</h1>
+          <p>Here’s what’s happening with your wellbeing habits today.</p>
+        </div>
+        <div class="welcome-actions">
+          <div class="date-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span id="liveDate">Today</span>
+          </div>
+          <button type="button" class="btn-leaf-cta" data-open-checkin>+ Log Check-In</button>
+        </div>
+      </section>
+
+      <!-- ROW 1: Hero Focus Banner + 2x2 KPI Grid -->
+      <section class="row-hero-kpis" aria-label="Current focus and weekly highlights">
+        <div class="hero-banner-card">
+          <img class="hero-bg" src="../assets/hero-editorial.jpg" alt="Balanced whole-food breakfast bowl and herbal tea" />
+          <div class="hero-overlay"></div>
+          <div class="hero-quote-side">“Progress, not perfection.”</div>
+          <div class="hero-content">
+            <span class="hero-focus-tag">Current Focus</span>
+            <h2 class="hero-title">Smart Afternoon Energy</h2>
+            <p class="hero-desc">Pairing whole foods and mindful pauses to maintain steady afternoon focus without restrictive rules.</p>
+            <div class="hero-progress-row">
+              <div class="progress-track"><div class="progress-fill fill-w-68"></div></div>
+              <span class="progress-percent">68%</span>
+            </div>
+            <button type="button" class="btn-hero-action" data-toast="Opening Module 2: Smart Afternoon Energy & Snack Pairings.">Continue Module →</button>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <div class="kpi-icon-wrap kpi-icon-leaf">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <span class="kpi-trend">↑ 3 this week</span>
+            </div>
+            <div class="kpi-number" id="kpiHabits">18</div>
+            <span class="kpi-label">Weekly Habits</span>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <div class="kpi-icon-wrap kpi-icon-slate">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              </div>
+              <span class="kpi-trend">↑ 12%</span>
+            </div>
+            <div class="kpi-number">5 days</div>
+            <span class="kpi-label">Steady Energy</span>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <div class="kpi-icon-wrap kpi-icon-sage">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <span class="kpi-trend">↑ 2 new</span>
+            </div>
+            <div class="kpi-number">8 / 12</div>
+            <span class="kpi-label">Modules Done</span>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <div class="kpi-icon-wrap kpi-icon-honey">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+              </div>
+              <span class="kpi-trend">↑ 18%</span>
+            </div>
+            <div class="kpi-number">15</div>
+            <span class="kpi-label">Mindful Pauses</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOWER BENTO: main grid (left) + Quick Actions / Recent Activity stack (right) -->
+      <section class="bento-lower" aria-label="Habits, journey, sessions, energy rhythm, quick actions and recent activity">
+        <div class="bento-main">
+          <div class="bento-main-top">
+            <div class="card-shell">
+              <div class="card-head">
+                <div>
+                  <h2>Habit Focus Areas</h2>
+                  <div class="card-sub">Active routines and consistency tracking</div>
+                </div>
+                <button type="button" class="link-more" data-open-checkin>Update →</button>
+              </div>
+
+              <div class="habit-list">
+                <div class="habit-row">
+                  <div class="habit-title-col">
+                    <div class="habit-icon habit-icon-leaf" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <div class="habit-info">
+                      <strong>Morning Hydration</strong>
+                      <span>Daily 2.2L target</span>
+                    </div>
+                  </div>
+                  <div class="habit-bar-col"><div class="progress-track"><div class="progress-fill fill-w-85"></div></div></div>
+                  <span class="habit-pct">85%</span>
+                  <span class="status-pill pill-steady">On Track</span>
+                </div>
+
+                <div class="habit-row">
+                  <div class="habit-title-col">
+                    <div class="habit-icon habit-icon-slate" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+                    </div>
+                    <div class="habit-info">
+                      <strong>Balanced Lunch Plate</strong>
+                      <span>Protein + colourful greens</span>
+                    </div>
+                  </div>
+                  <div class="habit-bar-col"><div class="progress-track"><div class="progress-fill fill-w-72"></div></div></div>
+                  <span class="habit-pct">72%</span>
+                  <span class="status-pill pill-building">Building</span>
+                </div>
+
+                <div class="habit-row">
+                  <div class="habit-title-col">
+                    <div class="habit-icon habit-icon-sage" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <div class="habit-info">
+                      <strong>15-Min Afternoon Walk</strong>
+                      <span>Screen break & fresh air</span>
+                    </div>
+                  </div>
+                  <div class="habit-bar-col"><div class="progress-track"><div class="progress-fill fill-w-90"></div></div></div>
+                  <span class="habit-pct">90%</span>
+                  <span class="status-pill pill-steady">On Track</span>
+                </div>
+
+                <div class="habit-row">
+                  <div class="habit-title-col">
+                    <div class="habit-icon habit-icon-honey" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </div>
+                    <div class="habit-info">
+                      <strong>Evening Wind-Down</strong>
+                      <span>Herbal tea & screen off</span>
+                    </div>
+                  </div>
+                  <div class="habit-bar-col"><div class="progress-track"><div class="progress-fill fill-w-50"></div></div></div>
+                  <span class="habit-pct">50%</span>
+                  <span class="status-pill pill-focus">In Progress</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-shell">
+              <div class="card-head">
+                <div>
+                  <h2>Journey Distribution</h2>
+                  <div class="card-sub">Balance across NutriFYI pillars</div>
+                </div>
+              </div>
+              <div class="donut-content">
+                <div class="donut-visual">
+                  <svg viewBox="0 0 42 42" aria-label="Journey distribution chart">
+                    <circle class="donut-ring-bg" cx="21" cy="21" r="15.915" fill="transparent" stroke-width="4.5"></circle>
+                    <circle class="donut-seg-leaf" cx="21" cy="21" r="15.915" fill="transparent" stroke-width="4.5" stroke-dasharray="38 62" stroke-dashoffset="0"></circle>
+                    <circle class="donut-seg-slate" cx="21" cy="21" r="15.915" fill="transparent" stroke-width="4.5" stroke-dasharray="25 75" stroke-dashoffset="-38"></circle>
+                    <circle class="donut-seg-sage" cx="21" cy="21" r="15.915" fill="transparent" stroke-width="4.5" stroke-dasharray="21 79" stroke-dashoffset="-63"></circle>
+                    <circle class="donut-seg-honey" cx="21" cy="21" r="15.915" fill="transparent" stroke-width="4.5" stroke-dasharray="16 84" stroke-dashoffset="-84"></circle>
+                  </svg>
+                  <div class="donut-center-text">
+                    <strong>24</strong>
+                    <span>Steps</span>
+                  </div>
+                </div>
+
+                <div class="donut-legend">
+                  <div class="legend-item">
+                    <div class="legend-item-left"><span class="legend-dot dot-leaf"></span><span>1. Learn</span></div>
+                    <span class="legend-pct">38%</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-item-left"><span class="legend-dot dot-slate"></span><span>2. Apply</span></div>
+                    <span class="legend-pct">25%</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-item-left"><span class="legend-dot dot-sage"></span><span>3. Build habits</span></div>
+                    <span class="legend-pct">21%</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-item-left"><span class="legend-dot dot-honey"></span><span>Rest & Reflect</span></div>
+                    <span class="legend-pct">16%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bento-main-bottom">
+            <div class="card-shell">
+              <div class="card-head">
+                <h2>Upcoming Sessions</h2>
+                <button type="button" class="link-more" data-toast="Full session schedule opens in Coaching.">View All →</button>
+              </div>
+              <div class="upcoming-list">
+                <div class="upcoming-item">
+                  <div class="upcoming-left">
+                    <div class="upcoming-icon habit-icon-leaf" aria-hidden="true">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                    </div>
+                    <div class="upcoming-info">
+                      <strong>1-on-1 Call with Claire</strong>
+                      <span>Thu, 3 Dec • 10:00 AM</span>
+                    </div>
+                  </div>
+                  <span class="status-pill pill-steady">Video</span>
+                </div>
+
+                <div class="upcoming-item">
+                  <div class="upcoming-left">
+                    <div class="upcoming-icon habit-icon-slate" aria-hidden="true">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    </div>
+                    <div class="upcoming-info">
+                      <strong>Weekly Reflection</strong>
+                      <span>Sun, 6 Dec • Anytime</span>
+                    </div>
+                  </div>
+                  <span class="status-pill pill-progress">Habit</span>
+                </div>
+
+                <div class="upcoming-item">
+                  <div class="upcoming-left">
+                    <div class="upcoming-icon habit-icon-honey" aria-hidden="true">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="upcoming-info">
+                      <strong>Summer Produce Q&amp;A</strong>
+                      <span>Tue, 8 Dec • 1:00 PM</span>
+                    </div>
+                  </div>
+                  <span class="status-pill pill-focus">Live</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-shell">
+              <div class="card-head">
+                <h2>Energy &amp; Focus Rhythm</h2>
+                <span class="chart-period">This Month</span>
+              </div>
+              <div class="chart-legend-top">
+                <span class="chart-legend-item"><span class="legend-dot dot-leaf"></span>Completed Habits</span>
+                <span class="chart-legend-item"><span class="legend-dot dot-slate"></span>Energy Level</span>
+              </div>
+              <div class="chart-box">
+                <svg viewBox="0 0 320 122" preserveAspectRatio="none" aria-label="Monthly energy and habits trend chart">
+                  <defs>
+                    <linearGradient id="leafGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#6fa21d" stop-opacity="0.32"/>
+                      <stop offset="100%" stop-color="#6fa21d" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="slateGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#66717f" stop-opacity="0.22"/>
+                      <stop offset="100%" stop-color="#66717f" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <line class="chart-grid-line" x1="0" y1="24" x2="320" y2="24"/>
+                  <line class="chart-grid-line" x1="0" y1="64" x2="320" y2="64"/>
+                  <line class="chart-grid-line" x1="0" y1="104" x2="320" y2="104"/>
+                  <path d="M 0,88 Q 50,32 100,56 T 200,44 T 320,20 L 320,108 L 0,108 Z" fill="url(#leafGrad)"/>
+                  <path class="chart-line-leaf" d="M 0,88 Q 50,32 100,56 T 200,44 T 320,20"/>
+                  <path d="M 0,102 Q 60,64 120,78 T 220,58 T 320,38 L 320,108 L 0,108 Z" fill="url(#slateGrad)"/>
+                  <path class="chart-line-slate" d="M 0,102 Q 60,64 120,78 T 220,58 T 320,38"/>
+                  <text class="chart-axis-label" x="6" y="120">Wk 1</text>
+                  <text class="chart-axis-label" x="86" y="120">Wk 2</text>
+                  <text class="chart-axis-label" x="166" y="120">Wk 3</text>
+                  <text class="chart-axis-label" x="246" y="120">Wk 4</text>
+                </svg>
+              </div>
+            </div>
+            <div class="bottom-quote-card">
+              <img src="../assets/food-smart-snacks.jpg" alt="Healthy whole-food snacks with berries and yogurt" loading="lazy" />
+              <div class="bottom-quote-overlay"></div>
+              <div class="bottom-quote-content">
+                <span class="bottom-quote-tag">Keep Going</span>
+                <h3>“Your effort today builds your energy tomorrow.”</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-side">
+          <div class="card-shell quick-actions-card">
+            <div class="card-head">
+              <div>
+                <h2>Quick Actions</h2>
+                <div class="card-sub">Shortcuts for today</div>
+              </div>
+            </div>
+            <div class="quick-actions-list">
+              <button type="button" class="btn-quick-action" data-open-checkin>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                Log Daily Check-In
+              </button>
+              <a href="https://wa.me/27615337941" target="_blank" rel="noopener noreferrer" class="btn-quick-action">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Message Coach Claire
+              </a>
+              <button type="button" class="btn-quick-action" data-toast="Summer Seasonal Produce Guide is ready in your Resource Library.">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                Open Summer Guide
+              </button>
+            </div>
+          </div>
+          <div class="card-shell activity-card">
+            <div class="card-head">
+              <h2>Recent Activity</h2>
+              <button type="button" class="link-more" data-toast="Your full activity history opens in My Habits.">View All →</button>
+            </div>
+            <div class="activity-list" id="activityList">
+              <div class="activity-item">
+                <img class="activity-avatar" src="../assets/coaching-portrait.jpg" alt="Claire Bennett" />
+                <div class="activity-text">
+                  <strong>Claire Bennett</strong>
+                  <span>Left feedback on your lunch prep</span>
+                  <span class="activity-time">2h ago</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-badge habit-icon-leaf" aria-hidden="true">✓</div>
+                <div class="activity-text">
+                  <strong>Module Completed</strong>
+                  <span>Smart Snacking without energy dips</span>
+                  <span class="activity-time">5h ago</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-badge habit-icon-honey" aria-hidden="true">★</div>
+                <div class="activity-text">
+                  <strong>5-Day Streak</strong>
+                  <span>Morning hydration target logged</span>
+                  <span class="activity-time">1d ago</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-badge habit-icon-sage" aria-hidden="true">✓</div>
+                <div class="activity-text">
+                  <strong>Reflection Saved</strong>
+                  <span>“Packing lunch the night before helped.”</span>
+                  <span class="activity-time">2d ago</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-badge habit-icon-slate" aria-hidden="true">▶</div>
+                <div class="activity-text">
+                  <strong>Lesson Started</strong>
+                  <span>Summer produce: what’s in season now</span>
+                  <span class="activity-time">3d ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Daily Check-In Modal -->
+  <div class="modal-backdrop hidden" id="checkInModal" role="dialog" aria-modal="true" aria-labelledby="checkInModalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="checkInModalTitle">Log Daily Check-In</h2>
+        <button type="button" class="modal-close" data-close-checkin aria-label="Close modal">×</button>
+      </div>
+      <p class="modal-sub">Small steps, zero pressure. Capture what worked for you today.</p>
+
+      <form id="checkInForm">
+        <div class="form-group">
+          <span class="form-label">How is your energy feeling today?</span>
+          <div class="energy-pills">
+            <button type="button" class="energy-pill" data-energy="Low">Low</button>
+            <button type="button" class="energy-pill selected" data-energy="Steady">Steady</button>
+            <button type="button" class="energy-pill" data-energy="Energised">Energised</button>
+            <button type="button" class="energy-pill" data-energy="Unwinding">Unwinding</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <span class="form-label">Today’s small steps</span>
+          <div class="checklist-box">
+            <label class="check-option"><input type="checkbox" name="habit" value="Morning Hydration" checked /> Morning Hydration</label>
+            <label class="check-option"><input type="checkbox" name="habit" value="Balanced Lunch Plate" /> Balanced Lunch Plate</label>
+            <label class="check-option"><input type="checkbox" name="habit" value="15-Min Afternoon Walk" /> 15-Min Afternoon Walk</label>
+            <label class="check-option"><input type="checkbox" name="habit" value="Evening Wind-Down" /> Evening Wind-Down</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="checkInNote">One thing that worked well today (optional)</label>
+          <textarea class="modal-textarea" id="checkInNote" rows="2" maxlength="300" placeholder="e.g., Prepping fruit and nuts kept my afternoon energy steady..."></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-modal-secondary" data-close-checkin>Cancel</button>
+          <button type="submit" class="btn-leaf-cta">Save Check-In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
